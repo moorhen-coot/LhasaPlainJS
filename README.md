@@ -67,20 +67,6 @@ Cross-Origin-Embedder-Policy: require-corp
 
 During development with Vite, [`vite-plugin-cross-origin-isolation`](https://www.npmjs.com/package/vite-plugin-cross-origin-isolation) handles this automatically.
 
-## Options
-
-| Option | Type | Description |
-|--------|------|-------------|
-| `assetsBaseUrl` | `string` | Base URL where WASM assets are served |
-| `dark_mode` | `boolean` | Enable dark mode |
-| `smiles_callback` | `(internal_id, id_from_prop, smiles) => void` | Called when a molecule's SMILES changes |
-| `show_top_panel` | `boolean` | Show the top toolbar |
-| `show_footer` | `boolean` | Show the footer |
-| `name_of_host_program` | `string` | Name shown in the UI as the host program |
-| `rdkit_molecule_pickle_list` | `{ pickle: string; id: string }[]` | Pre-existing molecules to load |
-| `bansu_endpoint` | `string` | Substructure search server URL |
-| `max_width` / `max_height` | `number \| null` | Constrain the canvas size |
-
 ## Building from source
 
 ```bash
