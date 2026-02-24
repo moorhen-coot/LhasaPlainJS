@@ -1,7 +1,7 @@
 {
   "name": "lhasa-ligand-builder-plainjs",
   "description": "Vanilla JS wrapper for lhasa-ligand-builder. Bundles React and all dependencies into a single file.",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "type": "module",
   "main": "dist/lhasa-ligand-builder-plainjs.js",
   "module": "dist/lhasa-ligand-builder-plainjs.js",
@@ -23,14 +23,14 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "lhasa-ligand-builder": "^0.2.2"
+    "lhasa-ligand-builder": "^0.3.0"
   },
   "devDependencies": {
     "@types/react": "^19.0.3",
     "@types/react-dom": "^19.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "typescript": "^5.7.3",
+    "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-dts": "^4.5.0"
   },
