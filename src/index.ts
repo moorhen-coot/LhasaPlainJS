@@ -14,6 +14,7 @@ function injectCssOnce(): void {
   document.head.appendChild(style)
 }
 
+/// Documentation for each prop is found in the lhasa-ligand-builder package, in the LhasaComponentProps type.
 export interface CreateLhasaOptions {
   assetsBaseUrl?: string
   show_top_panel?: boolean
@@ -21,12 +22,14 @@ export interface CreateLhasaOptions {
   icons_path_prefix?: string
   rdkit_molecule_pickle_list?: { pickle: string; id: string }[]
   name_of_host_program?: string
-  smiles_callback?: (
+  send_to_host_program_callback?: (
     internal_id: number,
     id_from_prop: string | null,
     smiles: string,
+    rdkit_pickle_base64: string
   ) => void
   bansu_endpoint?: string
+  bansu_callback?: (internal_id: number, id_from_prop: string | null, cif_text: string) => void;
   data_path_prefix?: string
   dark_mode?: boolean
   max_width?: number | null
@@ -57,8 +60,9 @@ export function createLhasa(
     icons_path_prefix: options.icons_path_prefix,
     rdkit_molecule_pickle_list: options.rdkit_molecule_pickle_list,
     name_of_host_program: options.name_of_host_program,
-    smiles_callback: options.smiles_callback,
+    send_to_host_program_callback: options.send_to_host_program_callback,
     bansu_endpoint: options.bansu_endpoint,
+    bansu_callback: options.bansu_callback,
     data_path_prefix: options.data_path_prefix,
     dark_mode: options.dark_mode,
     max_width: options.max_width,
