@@ -14,26 +14,31 @@ function injectCssOnce(): void {
   document.head.appendChild(style)
 }
 
-/// Documentation for each prop is found in the lhasa-ligand-builder package, in the LhasaComponentProps type.
+/// Documentation for each prop is found in the lhasa-ligand-builder package, in the LhasaEmbedderProps (which extends LhasaComponentProps) type.
 export interface CreateLhasaOptions {
-  assetsBaseUrl?: string
-  show_top_panel?: boolean
-  show_footer?: boolean
-  icons_path_prefix?: string
-  rdkit_molecule_pickle_list?: { pickle: string; id: string }[]
-  name_of_host_program?: string
+  // Can we add support for `loadingComponent` and `errorComponent` here? They would need to be React components, 
+  // so it would be a bit more complex to implement, but it could be useful for some users.
+  assetsBaseUrl?: string;
+  show_top_panel?: boolean;
+  show_footer?: boolean;
+  icons_path_prefix?: string;
+  rdkit_molecule_pickle_list?: { pickle: string; id: string }[];
+  name_of_host_program?: string;
   send_to_host_program_callback?: (
     internal_id: number,
     id_from_prop: string | null,
     smiles: string,
     rdkit_pickle_base64: string
-  ) => void
-  bansu_endpoint?: string
+  ) => void;
+  on_smiles_updated? : (smiles_array: [number, string | null, string, [string, string]?][]) => void;
+  bansu_endpoint?: string;
   bansu_callback?: (internal_id: number, id_from_prop: string | null, cif_text: string) => void;
-  data_path_prefix?: string
-  dark_mode?: boolean
-  max_width?: number | null
-  max_height?: number | null
+  data_path_prefix?: string;
+  dark_mode?: boolean;
+  width?: number | null;
+  height?: number | null;
+  max_width?: number | null;
+  max_height?: number | null;
 }
 
 export interface LhasaInstance {
@@ -61,10 +66,13 @@ export function createLhasa(
     rdkit_molecule_pickle_list: options.rdkit_molecule_pickle_list,
     name_of_host_program: options.name_of_host_program,
     send_to_host_program_callback: options.send_to_host_program_callback,
+    on_smiles_updated: options.on_smiles_updated,
     bansu_endpoint: options.bansu_endpoint,
     bansu_callback: options.bansu_callback,
     data_path_prefix: options.data_path_prefix,
     dark_mode: options.dark_mode,
+    width: options.width,
+    height: options.height,
     max_width: options.max_width,
     max_height: options.max_height,
   }

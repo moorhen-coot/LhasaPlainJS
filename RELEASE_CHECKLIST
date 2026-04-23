@@ -1,0 +1,6 @@
+
+
+* Make sure to update CreateLhasaOptions props
+* Raise dependeny version + our own version in package.json
+* `npm update; npm install`
+* Make sure there are no typescript errors
