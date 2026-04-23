@@ -1,7 +1,6 @@
 import { createElement } from 'react'
 import { createRoot, type Root } from 'react-dom/client'
-import { LhasaEmbedder } from 'lhasa-ligand-builder'
-import type { LhasaEmbedderProps } from 'lhasa-ligand-builder'
+import { LhasaEmbedder, type LhasaEmbedderProps } from 'lhasa-ligand-builder'
 import cssText from 'lhasa-ligand-builder/style.css?inline'
 
 let cssInjected = false
