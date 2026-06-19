@@ -4,3 +4,5 @@
 * Raise dependeny version + our own version in package.json
 * `npm update; npm install`
 * Make sure there are no typescript errors
+* git commit add; git tag -s v{your version}; git push; git push --tags
+* npm publish --access public
